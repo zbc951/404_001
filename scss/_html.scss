@@ -1,0 +1,184 @@
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    main {
+      width: 100%;
+      min-width: 1400px;
+      height: auto;
+
+      .warnBox {
+        background: url('../img/obj.png') no-repeat;
+        background-size: contain;
+        width: 1301px;
+        height: 914px;
+        margin: auto;
+        position: relative;
+
+        .warnTextBox {
+          width: 656px;
+          height: 269px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 170px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 30px 0;
+
+          .warnText {
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            flex-shrink: 0;
+
+            // 時間
+            &.warnText--time {
+              font-size: 36px;
+              letter-spacing: 3px;
+            }
+
+            // 系統維護中
+            &.warnText--inform {
+              height: 87px;
+              color: #fdff49;
+              font-size: 65px;
+              letter-spacing: 5px;
+
+              // // 游標
+              // &::after {
+              //   background: #fdff49;
+              //   content: '';
+              //   display: inline-block;
+              //   width: 4px;
+              //   height: 100%;
+              //   border-radius: 2px;
+              //   position: absolute;
+              //   right: -7px;
+              //   animation: cursor 1.1s steps(2, jump-none) infinite;
+              // }
+
+              // // 游標動畫
+              // @keyframes cursor {
+              //   from {
+              //     opacity: 0;
+              //   }
+
+              //   to {
+              //     opacity: 1;
+              //   }
+              // }
+
+              // // js生成span
+              // span {
+              //   display: inline-block;
+              //   overflow: hidden;
+              //   width: 0;
+              //   animation: text-in 0.3s ease-in-out forwards;
+              //   animation-delay: var(--delay);
+              // }
+
+              // // 打字動畫
+              // @keyframes text-in {
+              //   from {
+              //     width: 0ch;
+              //   }
+
+              //   to {
+              //     width: 70px;
+              //   }
+              // }
+            }
+
+            // 請維修後結束再來
+            &.warnText--slogan {
+              font-size: 36px;
+              letter-spacing: 2px;
+            }
+
+            // 動畫class
+            &.warnText--Animate {
+
+              // 加在系統維護中底下
+              &.warnText--inform {
+
+                // 游標
+                &::after {
+                  background: #fdff49;
+                  content: '';
+                  display: inline-block;
+                  width: 4px;
+                  height: 65px;
+                  border-radius: 2px;
+                  position: absolute;
+                  right: -7px;
+                  animation: cursor 1.1s steps(2, jump-none) infinite;
+                }
+
+                // 游標動畫
+                @keyframes cursor {
+                  from {
+                    opacity: 1;
+                  }
+
+                  to {
+                    opacity: 0;
+                  }
+                }
+
+                // js生成span
+                span {
+                  display: inline-block;
+                  overflow: hidden;
+                  width: 0;
+                  animation: text-in 0.1s ease-in-out forwards;
+                  animation-delay: var(--delay);
+                }
+
+                // 打字動畫
+                @keyframes text-in {
+                  from {
+                    width: 0;
+                  }
+
+                  to {
+                    width: 70px;
+                  }
+                }
+              }
+            }
+
+            &:nth-of-type(1) {
+              margin-bottom: 30px;
+            }
+
+            &:nth-of-type(2) {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .bg {
+      background: url('../img/bg.png')no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+}
